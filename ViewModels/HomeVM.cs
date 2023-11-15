@@ -10,6 +10,7 @@ namespace Forest.ViewModels
     {
         public List<Article> Article { get; set; }
         public List<User> User { get; set; }
-        public List<Category> Category { get; set; }              
+        public List<Category> Category { get; set; }  
+        public List<Ads> Ads { get; set; }            
     }
 }

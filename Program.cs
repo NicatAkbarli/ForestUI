@@ -34,10 +34,11 @@ app.UseRouting();
 
     
 app.UseAuthorization();
-app.UseEndpoints(endpoint=>{
+app.UseEndpoints(endpoint=>
+{
     endpoint.MapControllerRoute(
         name: "areas",
-        pattern:"{area:axists}/{controller:Home}/{action=Index}/{id?}"
+        pattern:"{area=exists}/{controller=Home}/{action=Index}/{id?}"
     );
 });
 

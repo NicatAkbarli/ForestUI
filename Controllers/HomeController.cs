@@ -37,7 +37,7 @@ public class HomeController : Controller
 
         };
        
-        return View();
+        return View(homeVM);
     }
      public IActionResult Detail()
     {

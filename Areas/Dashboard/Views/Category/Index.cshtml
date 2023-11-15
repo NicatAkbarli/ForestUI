@@ -1,0 +1,17 @@
+@model List<Category>
+
+
+
+@{
+    if(Model.Any())
+    {
+        foreach(var cat in Model){
+
+            <h5>@cat.CategoryName</h5>
+        }
+        }
+        else{
+            <h5>Heleki Category Yoxdur</h5>
+        }
+    }
+}
