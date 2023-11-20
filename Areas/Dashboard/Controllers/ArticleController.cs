@@ -1,23 +1,20 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+
+
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace Forest.Areas.Dashboard.Controllers
 {
-        [Area("Dashboard")]
-    public class AuthController : Controller
+    [Area("Dashboard")]
+    public class ArticleController : Controller
     {
-        
-        public IActionResult Login()
+        private readonly ILogger<ArticleController> _logger;
+
+        public ArticleController(ILogger<ArticleController> logger)
         {
-            return View();
+            _logger = logger;
         }
 
-        public IActionResult Register()
+        public IActionResult Index()
         {
             return View();
         }

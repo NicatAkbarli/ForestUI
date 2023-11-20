@@ -16,14 +16,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Victus\Desktop\Works\Forest\Forest
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Victus/Desktop/Works/Forest/Forest/Areas/Dashboard/Views/Auth/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGFzaGJvYXJkXFZpZXdzXEF1dGhcTG9naW4uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Victus/Desktop/Works/Forest/Forest/Areas/Dashboard/Views/Auth/Register.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGFzaGJvYXJkXFZpZXdzXEF1dGhcUmVnaXN0ZXIuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Victus/Desktop/Works/Forest/Forest/Areas/Dashboard/Views/Category/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGFzaGJvYXJkXFZpZXdzXENhdGVnb3J5XENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -60,12 +52,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aWNsZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Victus/Desktop/Works/Forest/Forest/Views/Auth/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Victus/Desktop/Works/Forest/Forest/Views/Auth/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Victus/Desktop/Works/Forest/Forest/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Victus/Desktop/Works/Forest/Forest/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Victus/Desktop/Works/Forest/Forest/Views/Shared/Components/Auth.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQXV0aC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Victus/Desktop/Works/Forest/Forest/Views/Shared/_ValidationScriptsPartial.cshtml]

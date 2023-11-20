@@ -1,13 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using Forest.Data;
 using Forest.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace Forest.Areas.Dashboard.Controllers
 {
@@ -20,6 +14,7 @@ public CategoryController(AppDbContext context)
         {
             _context = context;
         }
+        
 
         public IActionResult Index()
         {

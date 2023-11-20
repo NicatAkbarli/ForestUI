@@ -8,7 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 string connectionstring = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<AppDbContext>(option => {
+builder.Services.AddDbContext<AppDbContext>(option =>
+{
     option.UseSqlServer(connectionstring);
 });
 builder.Services.AddDefaultIdentity<User>()
@@ -32,13 +33,14 @@ app.UseStaticFiles();
 app.UseRouting();
 
 
-    
+
 app.UseAuthorization();
-app.UseEndpoints(endpoint=>
+
+app.UseEndpoints(endpoints =>
 {
-    endpoint.MapControllerRoute(
+    endpoints.MapControllerRoute(
         name: "areas",
-        pattern:"{area=exists}/{controller=Home}/{action=Index}/{id?}"
+        pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}"
     );
 });
 
