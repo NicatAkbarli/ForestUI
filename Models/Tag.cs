@@ -5,14 +5,9 @@ using System.Threading.Tasks;
 
 namespace Forest.Models
 {
-    public class Tag : BaseEntity
-    {
-        public string TagName { get; set; }
-        public List<ArticleTag> ArticleTags { get; set; }
-
-
-
-
-
-    }
+   public class Tag : BaseEntity
+{
+    public string TagName { get; set; }
+    public List<ArticleTag> ArticleTags { get; set; }
+}
 }

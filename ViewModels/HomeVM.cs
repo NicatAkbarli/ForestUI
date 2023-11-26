@@ -8,9 +8,10 @@ namespace Forest.ViewModels
 {
     public class HomeVM
     {
-        public List<Article> Article { get; set; }
-        public List<User> User { get; set; }
-        public List<Category> Category { get; set; }  
-        public List<Ads> Ads { get; set; }            
+       public List<Article> RecentArticles { get; set; }
+    public List<Article> TrendVideos { get; set; }
+    public List<Article> PopularPosts { get; set; }
+    public Ads SidebarAds { get; set; }
+    public Ads InlineAds { get; set; }  
     }
 }

@@ -1,48 +1,44 @@
-﻿using Forest.Data;
+﻿using System.Text.RegularExpressions;
+using Forest.Data;
 using Forest.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Forest.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
     private readonly AppDbContext _context;
 
-
-    public HomeController(ILogger<HomeController> logger, AppDbContext context)
+    public HomeController(AppDbContext context)
     {
-        _logger = logger;
         _context = context;
     }
 
-    public IActionResult Index()
+    public IActionResult Index(int pageNo = 1)
     {
-        var articles = _context.Articles.ToList();
-        var categories = _context.Categories.ToList();
-        var users = _context.Users.ToList();
-
-
-        HomeVM homeVM = new()
+        string StripHTML(string input)
         {
-            User = users,
-            Article = articles,
-            Category = categories
+            return Regex.Replace(input, "<.*?>", String.Empty);
+        }
+        int postsPerPage = 3; // TODO: Make this a setting in the database or something
+        int skipPage = (pageNo - 1) * postsPerPage;
+        ViewBag.CurrentPage = pageNo;
+        ViewBag.pageCount = (int)Math.Ceiling((double)_context.Articles.Count() / postsPerPage);
+        var recentArticles = _context.Articles.Include(x => x.Category).Include(x => x.User).OrderByDescending(x => x.Id).Skip(skipPage).Take(postsPerPage).ToList().Select(x => { x.Content = StripHTML(x.Content); return x; }).ToList();
+        var trendVideos = _context.Articles.Where(x => x.CategoryId == 4).OrderByDescending(x => x.ViewCount).Take(3).ToList();
+        var popular = _context.Articles.OrderByDescending(x => x.ViewCount).Take(3).ToList();
 
 
+        HomeVM vm = new()
+        {
+            RecentArticles = recentArticles,
+            TrendVideos = trendVideos,
+            PopularPosts = popular
         };
 
-        return View(homeVM);
-    }
-    public IActionResult Detail()
-    {
-        return View();
+        return View(vm);
     }
 
-    public IActionResult Privacy()
-    {
-
-        return View();
-    }
 
 }

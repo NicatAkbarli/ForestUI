@@ -9,28 +9,25 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Forest.Data
 {
-    public class AppDbContext : IdentityDbContext<User>
+   public class AppDbContext : IdentityDbContext<User>
+{
+    public AppDbContext(DbContextOptions options):base(options)
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
-        {
-
-        }
-        public DbSet<Article> Articles { get; set; }
-        public DbSet<ArticleTag> ArticleTags { get; set; }
-        public DbSet<Tag> Tags { get; set; }
-        public DbSet<Category> Categories { get; set; }
-        public DbSet<Comment> Comments { get; set; }
-        public DbSet<Ads> Ads { get; set; }
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            base.OnModelCreating(builder);
-            builder.Entity<User>().ToTable("Users");
-            builder.Entity<IdentityRole>().ToTable("Roles");
-
-     
-                    
-        }
-
-
     }
+
+    public DbSet<Article> Articles { get; set; }
+    public DbSet<ArticleTag> ArticleTags { get; set; }
+    public DbSet<Category> Categories { get; set; }
+    public DbSet<Comment> Comments { get; set; }
+    public DbSet<Tag> Tags { get; set; }
+    public DbSet<Ads> Advertisements { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        base.OnModelCreating(builder);
+        builder.Entity<User>().ToTable("Users");
+        builder.Entity<IdentityRole>().ToTable("Roles");
+        
+    }
+}
 }

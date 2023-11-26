@@ -1,4 +1,9 @@
 ﻿@model HomeVM
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
       
         <section class="section first-section">
             <div class="container-fluid">
@@ -76,7 +81,7 @@
                                         <h4><a href="/article/detail/1" title="">@art.Title</a></h4>
                                         <p>@art.Description</p>
                                         <small><a href="garden-category.html" title=""><i class="fa fa-eye"></i>@art.User</a></small>
-                                        <small><a href="garden-single.html" title="">@art.View</a></small>
+                                        <small><a href="garden-single.html" title="">@art.ViewCount</a></small>
                                         <small><a href="#" title="">@art.User.FirstName</a></small>
                                     </div><!-- end meta -->
                                 </div><!-- end blog-box -->
