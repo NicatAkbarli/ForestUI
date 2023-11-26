@@ -8,6 +8,7 @@ namespace Forest.ViewModels
 {
     public class HomeVM
     {
+        public Article Article { get; set; }
        public List<Article> RecentArticles { get; set; }
     public List<Article> TrendVideos { get; set; }
     public List<Article> PopularPosts { get; set; }
